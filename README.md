@@ -26,6 +26,13 @@
 - 契约（字段、PII 清洗、设备标识）以 bestResumeServer 仓库的 `docs/api-contract.md` 为准；
 - 不申请系统权限、照片走 PHPicker 的结论来自 `app/ios/App` 的 Info.plist 与选图实现。
 
+还有两条容易写错、写前必须回头核的：
+
+- **文本会被转交第三方大模型**。`config.release.toml` 的 `[llm]` 段默认 provider 是智谱
+  （fallback DeepSeek），所以不能写「不经过任何第三方」。App 只连自建服务器，第三方在服务端。
+- **服务端会留存精修关键词与结果**。`PolishRecord` 表存 `keywords` / `result` / `device_id`
+  （见 bestResumeServer `src/best_resume_server/db/tables.py`），政策里不能只说「本机数据」。
+
 **注意：** App 内「我的信息 → 隐私政策」（`app/ios/App/PrivacyPolicyView.swift`）仍是旧文案
 （写着「完全离线、不发起任何网络请求」），与本页不一致。提审前需要把它改成与本页相同的口径。
 
