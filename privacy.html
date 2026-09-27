@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小河狸 — 隐私政策</title>
+<meta name="description" content="小河狸 iPhone 简历编辑器隐私政策：简历数据只存在本机，仅三处功能联网，绝不上传姓名、手机号、邮箱。">
+<meta property="og:title" content="小河狸 — 隐私政策">
+<meta property="og:description" content="简历数据只存在本机，仅三处功能联网，绝不上传姓名、手机号、邮箱。">
+<meta property="og:image" content="assets/icon.png">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap narrow">
+
+<header class="hero hero-left">
+  <img class="hero-icon" src="assets/icon.png" alt="小河狸 App 图标" width="72" height="72">
+  <div>
+    <h1>隐私政策</h1>
+    <p class="tagline">小河狸 for iPhone</p>
+  </div>
+</header>
+
+<p class="meta"><strong>生效日期：</strong>2026 年 9 月 27 日 · 适用于：小河狸（App Store 发行版）</p>
+
+<section class="summary">
+  <h2>一句话版本</h2>
+  <p><strong>你的简历只存在这台 iPhone 上。</strong>小河狸没有账号体系，不做用户画像，
+  不含任何第三方统计、广告或追踪 SDK；只有在使用「经历扩写」「意见反馈」「订阅」时才会联网，
+  且<strong>绝不上传你的姓名、手机号或邮箱</strong>。全部联网行为只指向开发者自建服务器
+  <code>bestresume.pinebop.com</code>。</p>
+</section>
+
+<section>
+  <h2>1. 我们收集哪些信息</h2>
+  <p>小河狸不收集用于广告、画像或跨 App 追踪的数据。我们不建立用户账号，不记录你的浏览
+  行为，也不把你的内容出售或共享给任何第三方。</p>
+  <p>你主动填写的内容（简历、个人信息、头像）默认只保存在本机，细节见第 2 节；
+  少数需要联网的功能只发送完成该功能所必需的最小内容，细节见第 3 节。</p>
+</section>
+
+<section>
+  <h2>2. 简历数据存在哪里</h2>
+  <p>以下内容全部保存在这台 iPhone 上 App 的私有目录中，不会离开设备：</p>
+  <ul>
+    <li><strong>简历内容与样式</strong>——每份简历一个 JSON 文件，包含你填写的姓名、电话、
+    邮箱、城市、求职意向、教育与工作经历、技能等；</li>
+    <li><strong>照片</strong>——你为简历选择的头像图片；</li>
+    <li><strong>偏好设置</strong>——外观、模板选择、引导进度等。</li>
+  </ul>
+  <p>这些数据没有服务器副本。删除 App 就会一并删除；在此之前，你也可以在 App 内直接
+  编辑或删除任意一份简历。</p>
+</section>
+
+<section>
+  <h2>3. 联网行为：只有三处，且都不含联系方式</h2>
+  <p>除下面列出的情况外，App 不发起任何网络请求。</p>
+
+  <table>
+    <tr>
+      <th>功能</th>
+      <th>什么时候发</th>
+      <th>发送什么</th>
+      <th>用途</th>
+    </tr>
+    <tr>
+      <td>经历扩写 / 个人简介生成</td>
+      <td>你在引导或精修流程里主动使用时</td>
+      <td>经历类型、你逐条确认过的事实关键词、可选的方向偏好文字</td>
+      <td>生成更完整的简历要点</td>
+    </tr>
+    <tr>
+      <td>意见反馈</td>
+      <td>只有你点「提交」时</td>
+      <td>反馈正文、你选填的联系方式（邮箱或电话）、机型、系统版本、App 版本、语言、随机设备标识</td>
+      <td>定位问题并按你的意愿回访</td>
+    </tr>
+    <tr>
+      <td>订阅验签</td>
+      <td>启动、回到前台，或订阅状态变化时</td>
+      <td>Apple 签名的交易凭证（JWS）、随机设备标识</td>
+      <td>确认订阅是否有效并计算精修额度</td>
+    </tr>
+  </table>
+
+  <p>此外，首次进入引导时 App 会获取一次引导选项文案（如经历类型、技能分类），
+  该请求不包含任何用户内容，也不调用模型。</p>
+
+  <p><strong>隐私铁律：</strong>所有出站文本在唯一网络出口处强制清洗——命中邮箱或手机号
+  模式即整段隐去，之后才会发送。因此经历扩写永远不会收到你的姓名、手机号或邮箱；它拿到
+  的只是「做了什么」的关键词。</p>
+
+  <p>唯一例外是「意见反馈」里的联系方式：它由你主动填写、目的是让开发者回访，因此按你的
+  意愿原样发送；不填写就什么都不会带。反馈正文也不包含你的简历内容。</p>
+</section>
+
+<section>
+  <h2>4. 设备标识</h2>
+  <p>为了做请求限流，App 会在本机生成一个随机 UUID 作为设备标识，分别用于经历扩写与意见
+  反馈。它不包含任何硬件序列号，与你的 Apple 账户无关，卸载 App 后随之消失。它不用于
+  识别你的身份，也不用于追踪。</p>
+</section>
+
+<section>
+  <h2>5. 系统权限</h2>
+  <p>小河狸不申请相册、相机、定位、通讯录等任何系统权限。为简历选择头像时，App 使用
+  iOS 系统照片选择器——你只能授予它你主动选中的那一张图片，它无法访问相册里的其他内容。</p>
+</section>
+
+<section>
+  <h2>6. 第三方组件</h2>
+  <p>App 不包含任何第三方统计、广告、追踪或崩溃上报 SDK。排版引擎（Typst）与全部字体
+  都随 App 打包、在本机运行，不联网。购买与订阅由 Apple 的 StoreKit 处理。</p>
+</section>
+
+<section>
+  <h2>7. 购买与订阅</h2>
+  <p>如果你通过 App Store 购买「求职计划」订阅，支付由 Apple 按其隐私政策处理，开发者
+  不会收到你的支付方式或 App Store 账户信息。开发者从 Apple 拿到的是用于验签的交易凭证，
+  其中不含你的姓名与联系方式。</p>
+</section>
+
+<section>
+  <h2>8. 数据保留与删除</h2>
+  <ul>
+    <li><strong>本机数据</strong>：删除 App 即全部删除，没有服务器残留。</li>
+    <li><strong>反馈记录</strong>：为跟进问题而保留。你可以随时来信要求删除你提交过的反馈。</li>
+    <li><strong>订阅与额度记录</strong>：与 Apple 交易对应的身份、订阅状态与用量记录在服务端保留，
+    用于对账与额度核算；这些记录不含姓名、手机号、邮箱。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>9. 儿童隐私</h2>
+  <p>小河狸是通用的求职工具，不面向儿童，也不会有意收集儿童的个人信息。由于 App 不建立
+  账号、不收集身份信息，任何人使用时都不会向开发者暴露身份。</p>
+</section>
+
+<section>
+  <h2>10. 政策变更</h2>
+  <p>如果本政策发生变化，更新后的版本会发布在本页面并更新生效日期；涉及数据使用的重大
+  变更也会写进 App 的更新说明。</p>
+</section>
+
+<section>
+  <h2>11. 联系我们</h2>
+  <p>对本政策有疑问，或希望删除你提交过的反馈？请
+  <a href="https://github.com/Pinebop/bestresume-support/issues/new">在 GitHub 提交 issue</a>，
+  或通过 App 内「我的信息 → 意见反馈」联系我们（可留下邮箱便于回复）。也可访问
+  <a href="index.html">技术支持页</a>。</p>
+</section>
+
+<footer>
+  <p>© 2026 小河狸。保留所有权利。</p>
+  <nav><a href="index.html">技术支持</a> · <a href="privacy.html">隐私政策</a></nav>
+</footer>
+
+</main>
+</body>
+</html>

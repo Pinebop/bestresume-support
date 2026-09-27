@@ -1,0 +1,225 @@
+/* 小河狸 support site. No JavaScript; adapts to light/dark via prefers-color-scheme.
+   Palette mirrors app/templates/assets/brand-theme.json (the App's single source of truth). */
+
+:root {
+  --bg: #fbf8f0;
+  --fg: #332117;
+  --muted: #6e6357;
+  --card: #ffffff;
+  --border: #e6e0d4;
+  --accent: #408c5c;
+  --accent-soft: #e8f5e6;
+  --brown: #8c5433;
+  --brown-soft: #f5e3cc;
+  --code-bg: #f1ece0;
+  --shadow: 0 1px 3px rgba(51, 33, 23, 0.07);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #191c19;
+    --fg: #f3eee4;
+    --muted: #babbaE;
+    --card: #252b25;
+    --border: #33392f;
+    --accent: #91c59c;
+    --accent-soft: #2c4030;
+    --brown: #ddb68b;
+    --brown-soft: #403329;
+    --code-bg: #2a302a;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 22px 48px;
+}
+
+.wrap.narrow { max-width: 760px; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  background: var(--code-bg);
+  border-radius: 6px;
+  padding: 2px 6px;
+  word-break: break-all;
+}
+
+/* Hero */
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.hero-left { align-items: center; }
+
+.hero-icon {
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  flex: none;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.tagline {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.chips { margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+
+.chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+
+/* Sections */
+
+h2 {
+  font-size: 1.32rem;
+  letter-spacing: -0.01em;
+  margin: 2.6rem 0 0.9rem;
+}
+
+.meta { color: var(--muted); font-size: 0.92rem; margin-top: 0; }
+
+.summary {
+  background: var(--accent-soft);
+  border-radius: 14px;
+  padding: 4px 20px 16px;
+  margin-top: 1.6rem;
+}
+
+.summary h2 { margin-top: 0.9rem; }
+
+.note {
+  background: var(--brown-soft);
+  border-radius: 12px;
+  padding: 2px 18px 14px;
+  margin-top: 1.4rem;
+}
+
+.note h2 { font-size: 1.1rem; margin-top: 0.9rem; }
+
+/* Feature cards */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+}
+
+.card h3 { margin: 0 0 6px; font-size: 1rem; }
+
+.card p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+
+/* FAQ accordions */
+
+details {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 28px;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+details[open] summary::after { content: "−"; }
+
+details p { margin: 10px 0 2px; color: var(--muted); }
+
+/* Lists, table & footer */
+
+section ul { padding-left: 1.3rem; }
+section li { margin: 6px 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.93rem;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: var(--accent-soft); font-weight: 600; }
+
+footer {
+  margin-top: 3.2rem;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+footer p, footer nav { margin: 0; }

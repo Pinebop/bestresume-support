@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小河狸 — 技术支持</title>
+<meta name="description" content="小河狸 iPhone 简历编辑器的技术支持：功能说明、常见问题、故障排查与联系方式。">
+<meta property="og:title" content="小河狸 — 技术支持">
+<meta property="og:description" content="完全离线的 iPhone 简历编辑器，排版与导出都在本机完成。">
+<meta property="og:image" content="assets/icon.png">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap">
+
+<header class="hero">
+  <img class="hero-icon" src="assets/icon.png" alt="小河狸 App 图标" width="96" height="96">
+  <div>
+    <h1>小河狸</h1>
+    <p class="tagline">iPhone 简历编辑器——排版与导出都在本机完成。</p>
+    <p class="chips">
+      <span class="chip">版本 0.1</span>
+      <span class="chip">iOS 17 或更高</span>
+      <span class="chip">App Store</span>
+    </p>
+  </div>
+</header>
+
+<section>
+  <h2>关于</h2>
+  <p>小河狸帮你用问答式表单填写经历，挑一套中文简历模板，再导出 PDF、PNG 或 JPEG。
+  排版引擎（Typst）与全部字体都编译进 App，在本机运行——同一份简历，导出的结果与你在
+  App 里看到的预览一致。</p>
+  <p>简历数据只保存在这台 iPhone 上：没有账号体系、没有云同步、没有广告，也没有第三方
+  统计或追踪 SDK。只有在使用「经历扩写」「意见反馈」「订阅」时才会联网，且
+  <strong>绝不上传你的姓名、手机号或邮箱</strong>。</p>
+</section>
+
+<section>
+  <h2>功能</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>问答式填写</h3>
+      <p>引导流程按经历类型提问，逐条确认后写进简历；随时可以回到编辑器手动改。</p>
+    </div>
+    <div class="card">
+      <h3>中文简历模板</h3>
+      <p>多套随包模板，字号、留白、标题样式与对齐方式可调，排版即时预览。</p>
+    </div>
+    <div class="card">
+      <h3>导出 PDF / PNG / JPEG</h3>
+      <p>PDF 为矢量，放大不糊、可直接投递；图片格式适合发到聊天或社交平台。</p>
+    </div>
+    <div class="card">
+      <h3>打码与头像</h3>
+      <p>导出前可按字段打码（例如隐藏手机号），头像可选择显示、打码或隐藏。</p>
+    </div>
+    <div class="card">
+      <h3>经历扩写（可选联网）</h3>
+      <p>把经历关键词整理成更完整的要点。离线或失败时自动退回本地模板句。</p>
+    </div>
+    <div class="card">
+      <h3>求职计划</h3>
+      <p>App 内购买，解锁全部模板与无水印 PDF；订阅状态与额度以 Apple 交易为准。</p>
+    </div>
+    <div class="card">
+      <h3>多份简历</h3>
+      <p>为不同岗位准备不同版本，各自保留独立内容与样式。</p>
+    </div>
+    <div class="card">
+      <h3>数据留在本机</h3>
+      <p>删除 App 即删除全部简历与个人信息，服务端没有副本。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>常见问题</h2>
+
+  <details>
+    <summary>我的简历和个人信息存在哪里？</summary>
+    <p>全部存在这台 iPhone 上 App 的私有目录里（简历 JSON、头像图片与设置）。
+    没有服务器保存简历，也不会上传到任何云端。删除 App 就会一并删除。</p>
+  </details>
+
+  <details>
+    <summary>小河狸会联网吗？都传了什么？</summary>
+    <p>默认功能全部离线。只有三处会联网，且都指向开发者自建的
+    <code>bestresume.pinebop.com</code>：</p>
+    <ul>
+      <li><strong>经历扩写 /个人简介生成</strong>：只发送经历类型与你确认过的事实关键词，
+      不含姓名、手机号、邮箱（出站前强制清洗）。</li>
+      <li><strong>意见反馈</strong>：只有你主动点「提交」时，才发送反馈正文、你选填的联系方式
+      与设备型号、系统版本、App 版本、语言。</li>
+      <li><strong>订阅验签</strong>：把 Apple 签名的交易凭证发给服务器，用于确认订阅有效并
+      计算精修额度。</li>
+    </ul>
+    <p>完整说明见<a href="privacy.html">隐私政策</a>。</p>
+  </details>
+
+  <details>
+    <summary>会把我的姓名、电话、邮箱传到服务器吗？</summary>
+    <p>不会。这是硬性约束：所有出站文本在唯一网络出口处强制清洗，命中邮箱或手机号模式
+    即整段隐去，之后才会发出去。</p>
+  </details>
+
+  <details>
+    <summary>怎么把简历导出成文件？</summary>
+    <p>在编辑页点右上角「导出」，选择 PDF、PNG 或 JPEG，随后通过 iOS 系统分享面板
+    保存到「文件」或发给别人。发到哪里完全由你决定，App 不经手。</p>
+  </details>
+
+  <details>
+    <summary>中文排版需要额外下载字体吗？</summary>
+    <p>不需要。随包字体已包含中文字形，离线也能正常排版。如果你在有网络的电脑上编辑
+    导出的 PDF，请确认系统装有中文字体。</p>
+  </details>
+
+  <details>
+    <summary>订阅怎么恢复、取消或退款？</summary>
+    <p>订阅由 Apple 处理：在「设置 → Apple 账户 → 订阅」里查看、取消或管理。
+    换设备或重装后，打开 App 的「我的信息 → 求职计划」点「恢复购买」即可。
+    退款请求也通过 Apple 提交。</p>
+  </details>
+
+  <details>
+    <summary>免费能用哪些功能？</summary>
+    <p>免费档可以使用部分模板、进行有限次数的经历精修与导出（导出图片带水印）。
+    「求职计划」订阅解锁全部模板与无水印 PDF 导出。具体次数以 App 内展示为准。</p>
+  </details>
+
+  <details>
+    <summary>导出的 PDF 打不开，或者中文变成方块。</summary>
+    <p>先确认导出的是 PDF 而不是 PNG/JPEG；若在第三方阅读器里显示异常，换用
+    「文件」App 或系统预览打开。中文变方块通常是阅读器缺中文字体，不是文件损坏——
+    这份 PDF 里已经内嵌了排版所用字体，换一个阅读器即可正常显示。</p>
+  </details>
+
+  <details>
+    <summary>App 打不开或点开就退出。</summary>
+    <p>请先确认系统版本为 iOS 17 或更高，然后删除 App 重新从 App Store 安装。
+    如果仍然打不开，请反馈给我们，并附上机型与系统版本。</p>
+  </details>
+</section>
+
+<section>
+  <h2>联系我们</h2>
+  <p>遇到问题或有功能建议？欢迎
+  <a href="https://github.com/Pinebop/bestresume-support/issues/new">在 GitHub 提交 issue</a>
+  （也可以<a href="https://github.com/Pinebop/bestresume-support/issues">浏览已有 issue</a>），
+  或直接在 App 内「我的信息 → 意见反馈」提交——反馈会带着设备信息直达开发者。</p>
+  <p>为了更快定位问题，请一并说明：</p>
+  <ul>
+    <li>你的 iPhone 机型与 iOS 版本</li>
+    <li>App 版本（「我的信息」页底部可见）</li>
+    <li>复现步骤，以及你期望的结果</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2026 小河狸。保留所有权利。</p>
+  <nav><a href="index.html">技术支持</a> · <a href="privacy.html">隐私政策</a></nav>
+</footer>
+
+</main>
+</body>
+</html>
