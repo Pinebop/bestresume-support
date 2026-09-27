@@ -114,6 +114,11 @@ h2 {
   margin: 2.6rem 0 0.9rem;
 }
 
+h3 {
+  font-size: 1.04rem;
+  margin: 1.9rem 0 0.5rem;
+}
+
 .meta { color: var(--muted); font-size: 0.92rem; margin-top: 0; }
 
 .summary {

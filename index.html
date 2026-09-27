@@ -6,7 +6,7 @@
 <title>小河狸 — 技术支持</title>
 <meta name="description" content="小河狸 iPhone 简历编辑器的技术支持：功能说明、常见问题、故障排查与联系方式。">
 <meta property="og:title" content="小河狸 — 技术支持">
-<meta property="og:description" content="完全离线的 iPhone 简历编辑器，排版与导出都在本机完成。">
+<meta property="og:description" content="iPhone 简历编辑器：排版与导出都在本机完成，简历数据只存在手机上。">
 <meta property="og:image" content="assets/icon.png">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="stylesheet" href="styles.css">
@@ -33,7 +33,8 @@
   排版引擎（Typst）与全部字体都编译进 App，在本机运行——同一份简历，导出的结果与你在
   App 里看到的预览一致。</p>
   <p>简历数据只保存在这台 iPhone 上：没有账号体系、没有云同步、没有广告，也没有第三方
-  统计或追踪 SDK。只有在使用「经历扩写」「意见反馈」「订阅」时才会联网，且
+  统计或追踪 SDK。App 只在少数几种情况下联网——启动时的连通性检查与订阅核对、进入引导
+  时取一次选项文案、以及你主动使用经历扩写或提交反馈——且
   <strong>绝不上传你的姓名、手机号或邮箱</strong>。</p>
 </section>
 
@@ -62,11 +63,7 @@
     </div>
     <div class="card">
       <h3>求职计划</h3>
-      <p>App 内购买，解锁全部模板与无水印 PDF；订阅状态与额度以 Apple 交易为准。</p>
-    </div>
-    <div class="card">
-      <h3>多份简历</h3>
-      <p>为不同岗位准备不同版本，各自保留独立内容与样式。</p>
+      <p>App 内购买，解锁全部模板、多份简历与无水印 PDF；订阅状态以 Apple 交易为准。</p>
     </div>
     <div class="card">
       <h3>数据留在本机</h3>
@@ -86,15 +83,22 @@
 
   <details>
     <summary>小河狸会联网吗？都传了什么？</summary>
-    <p>默认功能全部离线。只有三处会联网，且都指向开发者自建的
-    <code>bestresume.pinebop.com</code>：</p>
+    <p>会，但次数很少，且全部指向开发者自建的 <code>bestresume.pinebop.com</code>。
+    其中三处是自动发生的（都不含你填写的内容）：</p>
     <ul>
-      <li><strong>经历扩写 /个人简介生成</strong>：只发送经历类型与你确认过的事实关键词，
+      <li><strong>连通性检查</strong>：启动时问一次服务是否在线，只发一个空的 GET 请求，
+      不含任何个人信息。</li>
+      <li><strong>订阅核对</strong>：把 Apple 签名的交易凭证与一个随机设备标识发出去，
+      用于确认订阅是否有效、还剩多少次精修；启动与回到前台时各可能触发一次。</li>
+      <li><strong>引导选项文案</strong>：进入引导时取一次经历类型 / 技能分类列表，
+      不含任何个人信息。</li>
+    </ul>
+    <p>另外两处只有你主动操作才会发生：</p>
+    <ul>
+      <li><strong>经历扩写 / 个人简介生成</strong>：只发送经历类型与你确认过的事实关键词，
       不含姓名、手机号、邮箱（出站前强制清洗）。</li>
-      <li><strong>意见反馈</strong>：只有你主动点「提交」时，才发送反馈正文、你选填的联系方式
+      <li><strong>意见反馈</strong>：只有你点「提交」时，才发送反馈正文、你选填的联系方式
       与设备型号、系统版本、App 版本、语言。</li>
-      <li><strong>订阅验签</strong>：把 Apple 签名的交易凭证发给服务器，用于确认订阅有效并
-      计算精修额度。</li>
     </ul>
     <p>完整说明见<a href="privacy.html">隐私政策</a>。</p>
   </details>
@@ -119,15 +123,19 @@
 
   <details>
     <summary>订阅怎么恢复、取消或退款？</summary>
-    <p>订阅由 Apple 处理：在「设置 → Apple 账户 → 订阅」里查看、取消或管理。
-    换设备或重装后，打开 App 的「我的信息 → 求职计划」点「恢复购买」即可。
-    退款请求也通过 Apple 提交。</p>
+    <p>订阅由 Apple 处理：在 iOS「设置 → Apple 账户 → 订阅」里查看、取消或管理，
+    退款也通过 Apple 提交。</p>
+    <p>在 App 里碰到需要订阅的功能（锁定模板、导出 PDF、第二份简历、精修次数用完）时，
+    会弹出「求职计划」页，页面上有「恢复购买」与「管理订阅」两个入口，换设备或重装后
+    从那里恢复即可。想查看当前订阅状态与剩余精修次数，走
+    「我的信息 → 设置 → 账号与权益」。</p>
   </details>
 
   <details>
     <summary>免费能用哪些功能？</summary>
-    <p>免费档可以使用部分模板、进行有限次数的经历精修与导出（导出图片带水印）。
-    「求职计划」订阅解锁全部模板与无水印 PDF 导出。具体次数以 App 内展示为准。</p>
+    <p>免费档可以保存一份简历、使用其中几套通用模板、进行有限次数的经历精修；
+    导出的图片带水印，<strong>导出 PDF 需要订阅</strong>。「求职计划」订阅解锁全部模板、
+    多份简历与无水印 PDF。具体次数以 App 内展示为准。</p>
   </details>
 
   <details>
@@ -153,7 +161,7 @@
   <p>为了更快定位问题，请一并说明：</p>
   <ul>
     <li>你的 iPhone 机型与 iOS 版本</li>
-    <li>App 版本（「我的信息」页底部可见）</li>
+    <li>App 版本（App Store 页面显示的版本号）</li>
     <li>复现步骤，以及你期望的结果</li>
   </ul>
 </section>
