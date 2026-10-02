@@ -23,18 +23,22 @@
 
 - 三处联网链路（经历扩写、意见反馈、订阅验签）的事实源是
   bestResume 仓库的 `docs/data-flow.md` 第 7–9 节；
-- 契约（字段、PII 清洗、设备标识）以 bestResumeServer 仓库的 `docs/api-contract.md` 为准；
+- 契约（字段、PII 清洗、身份令牌与客户端环境字段）以 bestResumeServer 仓库的 `docs/api-contract.md` 为准；
 - 不申请系统权限、照片走 PHPicker 的结论来自 `app/ios/App` 的 Info.plist 与选图实现。
 
 还有两条容易写错、写前必须回头核的：
 
 - **文本会被转交第三方大模型**。`config.release.toml` 的 `[llm]` 段默认 provider 是智谱
   （fallback DeepSeek），所以不能写「不经过任何第三方」。App 只连自建服务器，第三方在服务端。
-- **服务端会留存精修关键词与结果**。`PolishRecord` 表存 `keywords` / `result` / `device_id`
-  （见 bestResumeServer `src/best_resume_server/db/tables.py`），政策里不能只说「本机数据」。
+- **请求文本会出站并经服务器转交第三方大模型**，政策里不能只说「本机数据」。
+  `polish_record` 只存请求元信息与身份（`endpoint` / `provider` / `model` / 延迟 /
+  `identity = app:<appTransactionID>`）；简历原文与生成结果的落盘只在排障时开启的
+  `content.log`（仓库配置默认关闭，线上以 `.env` 为准），见 bestResumeServer
+  `src/best_resume_server/db/tables.py` 与 `config/config.release.toml`。
 
-**注意：** App 内「我的信息 → 隐私政策」（`app/ios/App/PrivacyPolicyView.swift`）仍是旧文案
-（写着「完全离线、不发起任何网络请求」），与本页不一致。提审前需要把它改成与本页相同的口径。
+**注意：** App 内「我的信息 → 隐私政策」（`app/ios/App/PrivacyPolicyView.swift`）已与
+本页同步（2026-10-02，bestResume merge `1fadcd1`：去随机设备标识、与身份 v3 对齐）；
+提审前再逐段核对两处一致。
 
 ## 支持渠道
 
